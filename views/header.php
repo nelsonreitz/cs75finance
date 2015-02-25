@@ -8,5 +8,8 @@
 
     <title>CS75 Finance</title>
 
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/scripts.js"></script>
+
   </head>
   <body>

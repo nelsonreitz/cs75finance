@@ -3,8 +3,20 @@
     // configuration
     require('../helpers/helpers.php');
 
+    // if ajax request
+    if (isset($_GET['ajax_symbol']))
+    {
+        // lookup stock
+        $stock = lookup($_GET['ajax_symbol']);
+
+        // set MIME type
+        header('Content-type: application/json');
+
+        // output JSON
+        print(json_encode($stock));
+    }
     // if form was submitted
-    if (isset($_GET['symbol']))
+    else if (isset($_GET['symbol']))
     {
         // validate submission
         if (empty($_GET["symbol"]))
