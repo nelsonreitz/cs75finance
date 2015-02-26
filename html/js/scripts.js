@@ -9,7 +9,22 @@ $(document).ready(function() {
         // update price every 10 sec
         setInterval(updatePrice, 10000);
 
-        google.setOnLoadCallback(drawChart);
+        $.ajax({
+            url: "history.php",
+            data: {
+                history_symbol: $("#symbol").html()
+            },
+            success: function(data) {
+
+                // prepare array for google line chart
+                var history = [];
+                $.each(data, function(date, price) {
+                    history.push([new Date(date), parseFloat(price)]);
+                });
+
+                google.setOnLoadCallback(drawChart(history));
+            }
+        });
     }
 });
 
@@ -32,19 +47,13 @@ function updatePrice() {
 /*
  * Draws a google line chart.
  */
-function drawChart() {
+function drawChart(history) {
 
     var data = new google.visualization.DataTable();
     data.addColumn("date", "Date");
     data.addColumn("number", "Price");
 
-    data.addRows([
-        [new Date("2015-02-19"), 130],
-        [new Date("2015-02-20"), 140],
-        [new Date("2015-02-23"), 156],
-        [new Date("2015-02-24"), 120],
-        [new Date("2015-02-25"), 133],
-    ]);
+    data.addRows(history);
 
     var options = {
         chart: {
