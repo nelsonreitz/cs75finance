@@ -64,6 +64,8 @@
             ++$i;
         }
 
+        // sort dates in ascending order
+        ksort($history);
         return $history;
     }
 
