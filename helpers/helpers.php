@@ -12,7 +12,63 @@
     }
 
     /*
-     * Return a stock by symbol.
+     * Returns a daily history of stock prices.
+     */
+    function history($symbol, $range = 5)
+    {
+        // reject symbols that start with ^
+        if (preg_match("/^\^/", $symbol))
+        {
+            return false;
+        }
+
+        // reject symbols that contain commas
+        if (preg_match("/,/", $symbol))
+        {
+            return false;
+        }
+
+        // set timezone to EST (like Yahoo)
+        date_default_timezone_set('EST');
+
+        // find current date
+        $day = date('d');
+        // Yahoo starts counting month from zero
+        $month = date('n') - 1;
+        $year = date('Y');
+
+        // open connection to Yahoo
+        $handle = @fopen("http://real-chart.finance.yahoo.com/table.csv?s=$symbol&a=$month&b=$day&c=2010&d=$month&e=$day&f=$year&g=d&ignore=.csv", "r"); 
+        if ($handle === false)
+        {
+            // trigger error
+            trigger_error('Could not connect to Yahoo!', E_USER_ERROR);
+            exit;
+        }
+
+        // declare history array
+        $history = [];
+        $i = 0;
+
+        // read $range number of lines in csv
+        while (!feof($handle) && $i < $range + 1) 
+        {
+            $data = fgetcsv($handle);
+
+            // store date as key and close price as value in history array
+            if (is_numeric($data[1]))
+            {
+                $history[$data[0]] = $data[4];
+            }
+
+            ++$i;
+        }
+
+        return $history;
+    }
+
+    /*
+     * Returns a stock by symbol.
      */
     function lookup($symbol)
     {
