@@ -26,16 +26,11 @@
 
         // lookup stock
         $stock = lookup($_GET['symbol']);
-        $history = history($_GET['symbol']);
 
         // validate symbol provided
         if ($stock == false)
         {
-            apologize("Symbol not found.");
-        }
-        else if ($history == false)
-        {
-            apologize('History error.');
+            apologize('Symbol not found.');
         }
         else
         {
@@ -43,7 +38,6 @@
             render('lookup_form');
             render('quote', ['stock' => $stock]);
             render('footer');
-            print(json_encode($history));
         }
     }
     else

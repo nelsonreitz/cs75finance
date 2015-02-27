@@ -1,6 +1,3 @@
-// load google api
-google.load('visualization', '1.1', {packages: ['line']});
-
 $(document).ready(function() {
 
     // if price div exists
@@ -17,7 +14,7 @@ $(document).ready(function() {
             success: function(data) {
 
                 // prepare array for google line chart
-                var history = [];
+                var history = [["Date", "Price"]];
                 $.each(data, function(date, price) {
                     history.push([new Date(date), parseFloat(price)]);
                 });
@@ -49,22 +46,23 @@ function updatePrice() {
  */
 function drawChart(history) {
 
-    var data = new google.visualization.DataTable();
-    data.addColumn("date", "Date");
-    data.addColumn("number", "Price");
-
-    data.addRows(history);
+    var data = new google.visualization.arrayToDataTable(history);
 
     var options = {
-        chart: {
-            title: "History stock prices",
-            subtitle: "Subtitle oh"
-        },
+        title: "Historical Prices",
+        legend: "none",
         width: 900,
         height: 500
     };
 
-    var chart = new google.charts.Line(document.getElementById("linechart_material"));
+    var chart = new google.visualization.LineChart(document.getElementById("chart"));
+
+    // format data
+    var formatter_date = new google.visualization.DateFormat({formatType: "short"});
+    var formatter_number = new google.visualization.NumberFormat({prefix: "$"}); 
+
+    formatter_date.format(data, 0);
+    formatter_number.format(data, 1);
 
     chart.draw(data, options);
 }

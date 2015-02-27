@@ -28,17 +28,16 @@
             return false;
         }
 
-        // set timezone to EST (like Yahoo)
+        // set timezone to EST like Yahoo
         date_default_timezone_set('EST');
 
         // find current date
         $day = date('d');
-        // Yahoo starts counting month from zero
         $month = date('n') - 1;
         $year = date('Y');
 
         // open connection to Yahoo
-        $handle = @fopen("http://real-chart.finance.yahoo.com/table.csv?s=$symbol&a=$month&b=$day&c=2010&d=$month&e=$day&f=$year&g=d&ignore=.csv", "r"); 
+        $handle = @fopen("http://real-chart.finance.yahoo.com/table.csv?s=$symbol&a=$month&b=$day&c=2005&d=$month&e=$day&f=$year&g=d&ignore=.csv", "r"); 
         if ($handle === false)
         {
             // trigger error
@@ -64,7 +63,7 @@
             ++$i;
         }
 
-        // sort dates in ascending order
+        // sort history dates in ascending order
         ksort($history);
         return $history;
     }
