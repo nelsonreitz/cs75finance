@@ -13,7 +13,7 @@
         }
 
         // lookup stock
-        $history = history($_GET['history_symbol'], 5);
+        $history = history($_GET['history_symbol'], $_GET['range']);
 
         // validate symbol provided
         if ($history == false)
