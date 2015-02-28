@@ -12,7 +12,13 @@
             apologize('You must provide a symbol');
         }
 
-        // lookup stock
+        // find year-to-date range
+        if ($_GET['range'] == 'ytd')
+        {
+            $_GET['range'] = date('z');
+        }
+
+        // lookup stock history
         $history = history($_GET['history_symbol'], $_GET['range']);
 
         // validate symbol provided

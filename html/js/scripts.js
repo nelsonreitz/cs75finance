@@ -13,7 +13,6 @@ $(document).ready(function() {
         $("#timerange").submit(function() {
 
             var range = $("input[type=submit][clicked=true]").attr("name");
-
             queryChart(range);
 
             return false;

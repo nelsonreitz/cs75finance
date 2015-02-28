@@ -31,36 +31,71 @@
         // set timezone to EST like Yahoo
         date_default_timezone_set('EST');
 
-        // find current date
-        $day = date('d');
-        $month = date('n') - 1;
-        $year = date('Y');
-
-        // open connection to Yahoo
-        $handle = @fopen("http://real-chart.finance.yahoo.com/table.csv?s=$symbol&a=$month&b=$day&c=2005&d=$month&e=$day&f=$year&g=d&ignore=.csv", "r"); 
-        if ($handle === false)
-        {
-            // trigger error
-            trigger_error('Could not connect to Yahoo!', E_USER_ERROR);
-            exit;
-        }
+        // find current date (yahoo starts counting months at zero)
+        $today = date('c');
+        $curr_month = date('n') - 1;
+        $curr_day = date('d');
+        $curr_year = date('Y');
 
         // declare history array
         $history = [];
-        $i = 0;
 
-        // read $range number of lines in csv
-        while (!feof($handle) && $i < $range + 1) 
+        // find the default last trading days
+        if ($range <= 5)
         {
-            $data = fgetcsv($handle);
-
-            // store date as key and close price as value in history array
-            if (is_numeric($data[1]))
+            // open connection to Yahoo
+            $handle = @fopen("http://real-chart.finance.yahoo.com/table.csv?s=$symbol&a=" . ($curr_month - 1) .
+            "&b=$curr_day&c=$curr_year&d=$curr_month&e=$curr_day&f=$curr_year&g=d&ignore=.csv", "r");
+            if ($handle === false)
             {
-                $history[$data[0]] = $data[4];
+                // trigger error
+                trigger_error('Could not connect to Yahoo!', E_USER_ERROR);
+                exit;
             }
 
-            ++$i;
+            $i = 0;
+            // read $range number of lines in csv
+            while (!feof($handle) && $i < $range + 1) 
+            {
+                $data = fgetcsv($handle);
+
+                // store date as key and close price as value in history array
+                if (is_numeric($data[1]))
+                {
+                    $history[$data[0]] = $data[4];
+                }
+
+                ++$i;
+            }
+        }
+        else
+        {
+            // find date from range time ago
+            $month_past = date('n', strtotime("-$range day", strtotime($today))) - 1;
+            $day_past = date('d', strtotime("-$range day", strtotime($today)));
+            $year_past = date('Y', strtotime("-$range day", strtotime($today)));
+
+            // open connection to Yahoo
+            $handle = @fopen("http://real-chart.finance.yahoo.com/table.csv?s=$symbol&a=$month_past&b=$day_past&c=$year_past" .
+            "&d=$curr_month&e=$curr_day&f=$curr_year&g=d&ignore=.csv", "r");
+            if ($handle === false)
+            {
+                // trigger error
+                trigger_error('Could not connect to Yahoo!', E_USER_ERROR);
+                exit;
+            }
+
+            // read whole csv
+            while (!feof($handle)) 
+            {
+                $data = fgetcsv($handle);
+
+                // store date as key and close price as value in history array
+                if (is_numeric($data[1]))
+                {
+                    $history[$data[0]] = $data[4];
+                }
+            }
         }
 
         // sort history dates in ascending order
