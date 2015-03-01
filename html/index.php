@@ -36,7 +36,7 @@
         {
             render('header');
             render('lookup_form');
-            render('quote', ['stock' => $stock]);
+            render('quote', ['stock' => $stock, 'ranges' => $ranges]);
             render('footer');
         }
     }

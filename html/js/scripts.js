@@ -1,3 +1,6 @@
+// default time range for history
+var DEFAULT_RANGE = 5;
+
 $(document).ready(function() {
 
     // if price div exists
@@ -73,7 +76,7 @@ function drawChart(history) {
 function queryChart(range) {
 
     // range default value
-    range = typeof range !== "undefined" ? range : 5;
+    range = typeof range !== "undefined" ? range : DEFAULT_RANGE;
 
     $.ajax({
         url: "history.php",

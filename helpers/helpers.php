@@ -1,5 +1,21 @@
 <?php
 
+    // default time range for history
+    define('DEFAULT_RANGE', 5);
+
+    // ranges for history form
+    $ranges = [
+        '5d'  =>    5,
+        '1m'  =>   31,
+        '3m'  =>   91,
+        '6m'  =>  134,
+        'YTD' => 'ytd',
+        '1y'  =>  365,
+        '2y'  =>  730,
+        '5y'  => 1825,
+        '10y' => 3650
+    ];
+
     /*
      * Apologizes to user with message.
      */
@@ -14,7 +30,7 @@
     /*
      * Returns a daily history of stock prices.
      */
-    function history($symbol, $range = 5)
+    function history($symbol, $range = DEFAULT_RANGE)
     {
         // reject symbols that start with ^
         if (preg_match("/^\^/", $symbol))
@@ -41,7 +57,7 @@
         $history = [];
 
         // find the default last trading days
-        if ($range <= 5)
+        if ($range <= DEFAULT_RANGE)
         {
             // open connection to Yahoo
             $handle = @fopen("http://real-chart.finance.yahoo.com/table.csv?s=$symbol&a=" . ($curr_month - 1) .
