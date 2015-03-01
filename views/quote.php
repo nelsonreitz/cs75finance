@@ -11,3 +11,18 @@
   <?php endforeach ?>
 
 </form>
+
+<ul>
+
+  <?php foreach ($headlines->channel->item as $item): ?>
+
+      <li>
+        <a href="<?= $item->link ?>">
+          <?= $item->title ?>
+        </a>
+        <p><?= $item->pubDate ?></p>
+      </li>
+
+  <?php endforeach ?>
+
+</ul>

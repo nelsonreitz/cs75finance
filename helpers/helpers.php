@@ -6,9 +6,9 @@
     // ranges for history form
     $ranges = [
         '5d'  =>    5,
-        '1m'  =>   31,
+        '1m'  =>   30,
         '3m'  =>   91,
-        '6m'  =>  134,
+        '6m'  =>  183,
         'YTD' => 'ytd',
         '1y'  =>  365,
         '2y'  =>  730,
@@ -25,6 +25,36 @@
         render('apology', ['message' => $message]);
         render('footer');
         exit;
+    }
+
+    /*
+     * Returns the last headlines of stock.
+     */
+    function headlines($symbol)
+    {
+        // reject symbols that start with ^
+        if (preg_match("/^\^/", $symbol))
+        {
+            return false;
+        }
+
+        // reject symbols that contain commas
+        if (preg_match("/,/", $symbol))
+        {
+            return false;
+        }
+
+        // load rss feed from Yahoo
+        $xml = simplexml_load_file("http://feeds.finance.yahoo.com/rss/2.0/headline?s=$symbol&region=US&lang=en-US");
+
+        // format articles dates
+        foreach ($xml->channel->item as $item)
+        {
+            $time = strtotime($item->pubDate);
+            $item->pubDate = date('M j Y', $time);
+        }
+
+        return $xml;
     }
 
     /*

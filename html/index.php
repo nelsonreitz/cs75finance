@@ -27,6 +27,9 @@
         // lookup stock
         $stock = lookup($_GET['symbol']);
 
+        // lookup stock headlines
+        $headlines = headlines($_GET['symbol']);
+
         // validate symbol provided
         if ($stock == false)
         {
@@ -36,7 +39,11 @@
         {
             render('header');
             render('lookup_form');
-            render('quote', ['stock' => $stock, 'ranges' => $ranges]);
+            render('quote', [
+                'stock' => $stock,
+                'headlines' => $headlines,
+                'ranges' => $ranges
+            ]);
             render('footer');
         }
     }
