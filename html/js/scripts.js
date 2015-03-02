@@ -55,7 +55,7 @@ function drawChart(history) {
     var options = {
         title: "Historical Prices",
         legend: "none",
-        width: 900,
+        width: 960,
         height: 500
     };
 

@@ -1,0 +1,43 @@
+/**
+ * Project1: CS75 Finance
+ *
+ * Computer Science E-75
+ * Nelson Reitz
+ *
+ * http://github.com/nelsonreitz/project1/
+ */
+
+/** Table of contents
+ * - General
+ * - Header
+ * - Lookup form
+ * - Messages
+ * - Footer
+ */
+
+/* General */
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Lato", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    overflow-y: scroll;
+    text-align: center;
+}
+
+a {
+    color: black;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Header */
+
+.header {
+}
