@@ -20,3 +20,7 @@
 
   </head>
   <body>
+
+    <header class="header" role="banner">
+      <h1 class="site-title"><a href="/">CS75 Finance</a></h1>
+    </header>

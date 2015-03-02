@@ -21,7 +21,7 @@ $(document).ready(function() {
             return false;
         });
 
-        // give clicked attribute to clicked input
+        // give clicked attribute to clicked inputs
         $("#timerange input[type=submit]").click(function() {
             $("input[type=submit]", $(this).parents("form")).removeAttr("clicked");
             $(this).attr("clicked", "true");
