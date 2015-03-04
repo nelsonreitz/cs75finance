@@ -7,7 +7,7 @@
  * http://github.com/nelsonreitz/project1/
  */
 
-/** Table of contents
+/** Table of content
  * - General
  * - Header
  * - Lookup form
@@ -33,11 +33,20 @@ body {
 
 a {
     color: black;
-    font-weight: 600;
     text-decoration: none;
+}
+
+input {
+    margin-bottom: 0;
 }
 
 /* Header */
 
 .header {
+    margin-top: 5em;
+}
+
+.site-title {
+    font-weight: 400;
+    text-transform: uppercase;
 }
