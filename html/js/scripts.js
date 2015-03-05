@@ -53,17 +53,23 @@ function drawChart(history) {
     var data = new google.visualization.arrayToDataTable(history);
 
     var options = {
-        title: "Historical Prices",
+        //title: "Historical Prices",
         legend: "none",
         width: 960,
-        height: 500
+        height: 500,
+        tooltip: {textStyle: {fontName: "Helvetica Neue", fontSize: 14, bold: false}},
+        vAxis: {
+            textStyle: {fontName: "Helvetica Neue", fontSize: 14},
+        },
+        hAxis: {textStyle: {fontName: "Helvetica Neue", fontSize: 14}}
+        //chartArea: {backgroundColor: {stroke: 'black', strokeWidth: 1}}
     };
 
     var chart = new google.visualization.LineChart(document.getElementById("chart"));
 
     // format data
     var formatter_date = new google.visualization.DateFormat({formatType: "short"});
-    var formatter_number = new google.visualization.NumberFormat({prefix: "$"}); 
+    var formatter_number = new google.visualization.NumberFormat({prefix: "$", decimalSymbol: ".", fractionDigits: 2}); 
     formatter_date.format(data, 0);
     formatter_number.format(data, 1);
 
