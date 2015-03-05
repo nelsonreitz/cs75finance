@@ -1,8 +1,8 @@
 <div class="quote">
-  <p>
-    A share of <?= $stock['name'] ?> (<span id="symbol"><?= $stock['symbol'] ?></span>)
-    costs $<span id="price"><?= $stock['price'] ?></span>.
-  </p>
+  <h2>
+    <?= $stock['name'] ?> (<span id="symbol"><?= $stock['symbol'] ?></span>):
+    $<span id="price"><?= $stock['price'] ?></span>
+  </h2>
 </div><!-- quote -->
 
 <div class="history">
@@ -18,15 +18,14 @@
 </div><!-- .history -->
 
 <div class="headlines">
+  <h2>Headlines</h2>
   <ul>
 
     <?php foreach ($headlines->channel->item as $item): ?>
 
         <li>
-          <a href="<?= $item->link ?>">
-            <?= $item->title ?>
-          </a>
-          <p><?= $item->pubDate ?></p>
+          <a class="headline-title" href="<?= $item->link ?>"><?= $item->title ?></a>
+          <span class="headline-date"><?= $item->pubDate ?></span>
         </li>
 
     <?php endforeach ?>

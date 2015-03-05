@@ -4,14 +4,17 @@
  * Computer Science E-75
  * Nelson Reitz
  *
- * http://github.com/nelsonreitz/project1/
+ * http://github.com/nelsonreitz/project1
  */
 
 /** Table of content
  * - General
  * - Header
  * - Lookup form
- * - Messages
+ * - Quote
+ * - History
+ * - Headlines
+ * - Apology
  * - Footer
  */
 
@@ -26,27 +29,118 @@ html {
 }
 
 body {
-    font-family: "Lato", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     overflow-y: scroll;
     text-align: center;
+    color: #444444;
 }
 
-a {
-    color: black;
+h2 {
+    font-size: 30px;
+}
+
+a, a:hover {
+    color: #444444;
     text-decoration: none;
 }
 
 input {
-    margin-bottom: 0;
+    border-radius: 1px !important;
 }
 
 /* Header */
 
 .header {
-    margin-top: 5em;
+    margin-top: 2em;
 }
 
 .site-title {
     font-weight: 400;
     text-transform: uppercase;
+    margin-bottom: 0.5em;
+}
+
+/* Lookup form */
+
+#lookup-form {
+    margin-bottom: 5em;
+}
+
+/* Quote */
+
+.quote {
+    margin-bottom: 1.5em;
+}
+
+.quote h2 {
+    margin-bottom: 0;
+}
+
+/* History */
+
+.history {
+    margin-bottom: 5em;
+}
+
+#chart {
+    margin-bottom: 2.5em;
+}
+
+#timerange {
+    margin-bottom: 0;
+}
+
+#timerange input {
+    /* width: 7em; */
+}
+
+/* Headlines */
+
+.headlines {
+    padding: 0 20%;
+    text-align: left;
+    font-size: 14px;
+}
+
+.headlines h2 {
+    font-size: 30px;
+}
+
+.headlines ul {
+    list-style: none;
+}
+
+.headlines a {
+    font-weight: 600;
+}
+
+.headline-date {
+    color: grey;
+}
+
+/* Apology */
+
+.apology {
+}
+
+/* Footer */
+
+.footer {
+    color: grey;
+    font-size: 11px;
+    margin-bottom: 10em;
+    margin-top: 50%;
+}
+
+.footer p {
+    margin-bottom: 0;
+}
+
+.footer p:first-of-type {
+    margin-bottom: 0.3em;
+}
+
+.footer a {
+    font-weight: 600;
+    color: grey;
 }

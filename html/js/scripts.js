@@ -53,10 +53,10 @@ function drawChart(history) {
     var data = new google.visualization.arrayToDataTable(history);
 
     var options = {
-        //title: "Historical Prices",
         legend: "none",
         width: 960,
-        height: 500,
+        height: 450,
+        chartArea: {top: 5, width: "90%", height: "90%"},
         tooltip: {textStyle: {fontName: "Helvetica Neue", fontSize: 14, bold: false}},
         vAxis: {
             textStyle: {fontName: "Helvetica Neue", fontSize: 14},
