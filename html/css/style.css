@@ -39,9 +39,14 @@ h2 {
     font-size: 30px;
 }
 
-a, a:hover {
+a {
     color: #444444;
+    font-weight: 600;
     text-decoration: none;
+}
+
+a:hover {
+    color: #444444;
 }
 
 input {
@@ -55,15 +60,19 @@ input {
 }
 
 .site-title {
-    font-weight: 400;
     text-transform: uppercase;
-    margin-bottom: 0.5em;
+    font-size: 30px;
+    margin-bottom: 1em;
+}
+
+.site-title a {
+    font-weight: 600;
 }
 
 /* Lookup form */
 
 #lookup-form {
-    margin-bottom: 5em;
+    margin-bottom: 3em;
 }
 
 /* Quote */

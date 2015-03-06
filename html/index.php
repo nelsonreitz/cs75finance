@@ -19,9 +19,9 @@
     else if (isset($_GET['symbol']))
     {
         // validate submission
-        if (empty($_GET["symbol"]))
+        if (empty($_GET['symbol']))
         {
-            apologize('You must provide a symbol');
+            apologize('You must provide a symbol.');
         }
 
         // lookup stock
