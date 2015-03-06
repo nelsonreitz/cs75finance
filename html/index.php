@@ -37,7 +37,11 @@
         }
         else
         {
-            render('header');
+            // format title
+            $title = strtoupper($_GET['symbol']);
+
+            // render page
+            render('header', ['title' => $title]);
             render('lookup_form');
             render('quote', [
                 'stock' => $stock,

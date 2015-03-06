@@ -21,7 +21,7 @@
      */
     function apologize($message)
     {
-        render('header');
+        render('header', ['title' => 'Error']);
         render('lookup_form');
         render('apology', ['message' => $message]);
         render('footer');
