@@ -26,6 +26,9 @@ $(document).ready(function() {
             $("input[type=submit]", $(this).parents("form")).removeAttr("clicked");
             $(this).attr("clicked", "true");
         });
+
+        // give default clicked attribute to default range
+        $("#timerange input[value=" + DEFAULT_RANGE + "d]").attr("clicked", "true");
     }
 });
 

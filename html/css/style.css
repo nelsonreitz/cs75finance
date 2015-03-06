@@ -94,6 +94,11 @@ input {
     /* width: 7em; */
 }
 
+#timerange input[clicked="true"] {
+    background-color: lightgrey;
+    border: 1px solid black;
+}
+
 /* Headlines */
 
 .headlines {
