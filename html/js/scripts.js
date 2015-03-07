@@ -57,9 +57,8 @@ function drawChart(history) {
 
     var options = {
         legend: "none",
-        width: 960,
         height: 400,
-        chartArea: {top: 5, width: "80%", height: "90%"},
+        chartArea: {top: 5, width: "90%", height: "90%"},
         tooltip: {textStyle: {fontName: "Helvetica Neue", fontSize: 14, bold: false}},
         vAxis: {
             textStyle: {fontName: "Helvetica Neue", fontSize: 14},

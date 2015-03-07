@@ -53,6 +53,10 @@ input {
     border-radius: 1px !important;
 }
 
+.container {
+    max-width: 850px;
+}
+
 /* Header */
 
 .header {
@@ -148,7 +152,7 @@ input {
     color: grey;
     font-size: 11px;
     margin-bottom: 10em;
-    margin-top: 50%;
+    margin-top: 48%;
     border-top: 1px solid lightgrey;
     padding-top: 3em;
 }
