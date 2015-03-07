@@ -51,6 +51,12 @@ a:hover {
 
 input {
     border-radius: 1px !important;
+    position: relative;
+}
+
+input:hover, input:focus,
+input:active {
+    z-index: 2;
 }
 
 .container {
@@ -80,6 +86,18 @@ input {
     margin-bottom: 1em;
 }
 
+#lookup-form input[type=text] {
+    margin-right: -5px;
+}
+
+#lookup-form input[type=text]:focus {
+    border: 1px solid grey;
+}
+
+#lookup-form input[type=submit] {
+    padding: 0 20px;
+}
+
 /* Quote */
 
 .quote {
@@ -104,14 +122,17 @@ input {
 
 #timerange {
     margin-bottom: 0;
+    margin-right: 3px; /* compensates for input negative margin */
 }
 
 #timerange input {
-    /* width: 7em; */
+    width: 6.5em;
+    padding: 0 20px;
+    margin-right: -5px;
 }
 
 #timerange input[clicked="true"] {
-    background-color: #f7f7f7;
+    background-color: #f2f2f2;
 }
 
 /* Headlines */
