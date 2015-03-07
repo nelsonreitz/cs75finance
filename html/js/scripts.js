@@ -27,7 +27,7 @@ $(document).ready(function() {
             $(this).attr("clicked", "true");
         });
 
-        // give default clicked attribute to default range
+        // give clicked attribute to default range
         $("#timerange input[value=" + DEFAULT_RANGE + "d]").attr("clicked", "true");
     }
 });
@@ -58,8 +58,8 @@ function drawChart(history) {
     var options = {
         legend: "none",
         width: 960,
-        height: 450,
-        chartArea: {top: 5, width: "90%", height: "90%"},
+        height: 400,
+        chartArea: {top: 5, width: "80%", height: "90%"},
         tooltip: {textStyle: {fontName: "Helvetica Neue", fontSize: 14, bold: false}},
         vAxis: {
             textStyle: {fontName: "Helvetica Neue", fontSize: 14},

@@ -196,7 +196,7 @@
         return [
             'symbol' => $data[0],
             'name'   => $data[1],
-            'price'  => $data[2]
+            'price'  => number_format($data[2], 2)
         ];
     }
 

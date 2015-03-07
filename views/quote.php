@@ -6,8 +6,6 @@
 </div><!-- quote -->
 
 <div class="history">
-  <div id="chart">
-  </div><!-- #chart -->
   <form id="timerange">
 
     <?php foreach ($ranges as $range => $days): ?>
@@ -15,6 +13,8 @@
     <?php endforeach ?>
 
   </form>
+  <div id="chart">
+  </div><!-- #chart -->
 </div><!-- .history -->
 
 <div class="headlines">
