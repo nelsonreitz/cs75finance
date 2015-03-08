@@ -29,6 +29,12 @@ $(document).ready(function() {
 
         // give clicked attribute to default range
         $("#timerange input[value=" + DEFAULT_RANGE + "d]").attr("clicked", "true");
+
+        // redraw chart if window resize
+        $(window).resize(function() {
+            var range = $("input[type=submit][clicked=true]").attr("name");
+            queryChart(range);
+        });
     }
 });
 
