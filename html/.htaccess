@@ -1,0 +1,11 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+
+# external redirect from actual URL to pretty one
+RewriteCond %{THE_REQUEST} \s/+index.php\?symbol=([^\s&]+) [NC]
+RewriteRule ^ %1? [R=302,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?symbol=$1
