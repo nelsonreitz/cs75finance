@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript"
           src="https://www.google.com/jsapi?autoload={

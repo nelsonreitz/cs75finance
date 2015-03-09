@@ -9,7 +9,6 @@ As per the project [specification](http://cdn.cs75.net/2012/summer/projects/1/pr
 
 #### To do
 - Mobile media queries
-- Favicon
 
 #### Credits
 The PHP structure of this project is based on [CS50x](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x) pset7: [CS50 Finance](http://d2o9nyf4hwsci4.cloudfront.net/2014/spring/psets/7/pset7/pset7.html).
