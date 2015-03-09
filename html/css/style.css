@@ -32,7 +32,7 @@ body {
     font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     overflow-y: scroll;
     text-align: center;
-    color: #444444;
+    color: #444;
 }
 
 h2 {
@@ -40,13 +40,13 @@ h2 {
 }
 
 a {
-    color: #444444;
+    color: #444;
     font-weight: 600;
     text-decoration: none;
 }
 
 a:hover {
-    color: #444444;
+    color: #444;
 }
 
 input {
@@ -76,7 +76,7 @@ input:active {
 }
 
 .site-title a {
-    color: black;
+    color: #000;
     font-weight: 400;
 }
 
@@ -91,7 +91,7 @@ input:active {
 }
 
 #lookup-form input[type=text]:focus {
-    border: 1px solid grey;
+    border: 1px solid #888;
 }
 
 #lookup-form input[type=submit] {
@@ -102,12 +102,13 @@ input:active {
 
 .quote {
     margin-bottom: 1.5em;
-    border-top: 1px solid lightgrey;
+    border-top: 1px solid #d1d1d1;
     padding-top: 3.5em;
 }
 
 .quote h2 {
     margin-bottom: 0;
+    letter-spacing: 0.01em;
 }
 
 /* History */
@@ -138,7 +139,7 @@ input:active {
 /* Headlines */
 
 .headlines {
-    border-top: 1px solid lightgrey;
+    border-top: 1px solid #d1d1d1;
     padding: 3em 15% 0 15%;
     text-align: left;
     font-size: 14px;
@@ -157,24 +158,24 @@ input:active {
 }
 
 .headline-date {
-    color: grey;
+    color: #888;
 }
 
 /* Apology */
 
 .apology {
     padding-top: 2em;
-    border-top: 1px solid lightgrey;
+    border-top: 1px solid #d1d1d1;
 }
 
 /* Footer */
 
 .footer {
-    color: grey;
+    color: #888;
     font-size: 11px;
     margin-bottom: 10em;
     margin-top: 48%;
-    border-top: 1px solid lightgrey;
+    border-top: 1px solid #d1d1d1;
     padding-top: 3em;
 }
 
@@ -188,5 +189,5 @@ input:active {
 
 .footer a {
     font-weight: 600;
-    color: grey;
+    color: #888;
 }
