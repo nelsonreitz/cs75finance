@@ -43,7 +43,7 @@
             // render page
             render('header', ['title' => $title]);
             render('lookup_form');
-            render('quote', [
+            render('lookup', [
                 'stock' => $stock,
                 'headlines' => $headlines,
                 'ranges' => $ranges

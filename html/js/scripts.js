@@ -1,3 +1,14 @@
+/**
+ * scripts.js
+ *
+ * Computer Science E-75
+ * Project1
+ *
+ * Nelson Reitz
+ * http://github.com/nelsonreitz/project1
+ *
+ **/
+
 // default time range for history
 var DEFAULT_RANGE = 5;
 
@@ -67,9 +78,7 @@ function drawChart(history) {
         colors: ['#444'],
         chartArea: {top: 5, width: "90%", height: "90%"},
         tooltip: {textStyle: {fontName: "Helvetica Neue", fontSize: 14, bold: false}},
-        vAxis: {
-            textStyle: {fontName: "Helvetica Neue", fontSize: 14},
-        },
+        vAxis: {textStyle: {fontName: "Helvetica Neue", fontSize: 14}},
         hAxis: {textStyle: {fontName: "Helvetica Neue", fontSize: 14}},
     };
 

@@ -22,6 +22,7 @@
 
 html {
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
 }
 
 *, *:before, *:after {
@@ -29,10 +30,10 @@ html {
 }
 
 body {
+    color: #444;
     font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     overflow-y: scroll;
     text-align: center;
-    color: #444;
 }
 
 h2 {
@@ -70,9 +71,9 @@ input:active {
 }
 
 .site-title {
-    text-transform: uppercase;
     font-size: 30px;
     margin-bottom: 1em;
+    text-transform: uppercase;
 }
 
 .site-title a {
@@ -87,7 +88,7 @@ input:active {
 }
 
 #lookup-form input[type=text] {
-    margin-right: -5px;
+    margin-right: -0.61%;
 }
 
 #lookup-form input[type=text]:focus {
@@ -101,14 +102,14 @@ input:active {
 /* Quote */
 
 .quote {
-    margin-bottom: 1.5em;
     border-top: 1px solid #d1d1d1;
+    margin-bottom: 1.5em;
     padding-top: 3.5em;
 }
 
 .quote h2 {
-    margin-bottom: 0;
     letter-spacing: 0.01em;
+    margin-bottom: 0;
 }
 
 /* History */
@@ -123,13 +124,13 @@ input:active {
 
 #timerange {
     margin-bottom: 0;
-    margin-right: 3px; /* compensates for input negative margin */
+    margin-right: 3px; /* compensates for input negative margin-right */
 }
 
 #timerange input {
-    width: 6.5em;
+    margin-right: -0.61%;
     padding: 0 20px;
-    margin-right: -5px;
+    width: 6.5em;
 }
 
 #timerange input[clicked="true"] {
@@ -140,9 +141,9 @@ input:active {
 
 .headlines {
     border-top: 1px solid #d1d1d1;
+    font-size: 14px;
     padding: 3em 15% 0 15%;
     text-align: left;
-    font-size: 14px;
 }
 
 .headlines h2 {
@@ -164,18 +165,18 @@ input:active {
 /* Apology */
 
 .apology {
-    padding-top: 2em;
     border-top: 1px solid #d1d1d1;
+    padding-top: 2em;
 }
 
 /* Footer */
 
 .footer {
+    border-top: 1px solid #d1d1d1;
     color: #888;
     font-size: 11px;
     margin-bottom: 10em;
     margin-top: 48%;
-    border-top: 1px solid #d1d1d1;
     padding-top: 3em;
 }
 
@@ -183,11 +184,7 @@ input:active {
     margin-bottom: 0;
 }
 
-.footer p:first-of-type {
-    margin-bottom: 0.3em;
-}
-
 .footer a {
-    font-weight: 600;
     color: #888;
+    font-weight: 600;
 }

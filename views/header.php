@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html land="en">
+<html lang="en">
   <head>
 
     <meta charset="utf-8">
@@ -12,20 +12,19 @@
         <title>CS75 Finance</title>
     <?php endif ?>
 
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/style.css">
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={
-                                    'modules':[{
-                                      'name':'visualization',
-                                      'version':'1',
-                                      'packages':['corechart']
-                                    }]
-                                  }"></script>
+    <script type="text/javascript"
+          src="https://www.google.com/jsapi?autoload={
+            'modules':[{
+              'name':'visualization',
+              'version':'1',
+              'packages':['corechart']
+            }]
+          }"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
 
   </head>

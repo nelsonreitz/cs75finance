@@ -1,5 +1,17 @@
 <?php
 
+    /**
+     * helpers.php
+     *
+     * Computer Science E-75
+     * Project1
+     *
+     * Nelson Reitz
+     * http://github.com/nelsonreitz/project1
+     *
+     * Helpers functions.
+     **/
+
     // default time range for history
     define('DEFAULT_RANGE', 5);
 
@@ -106,12 +118,11 @@
             {
                 $data = fgetcsv($handle);
 
-                // store date as key and close price as value in history array
+                // store date as key and price as value in history array
                 if (is_numeric($data[1]))
                 {
                     $history[$data[0]] = $data[4];
                 }
-
                 ++$i;
             }
         }
@@ -194,7 +205,7 @@
 
         // return stock price as an associative array
         return [
-            'symbol' => $data[0],
+            'symbol' => strtoupper($data[0]),
             'name'   => $data[1],
             'price'  => number_format($data[2], 2)
         ];

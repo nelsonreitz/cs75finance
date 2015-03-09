@@ -24,8 +24,10 @@
     <?php foreach ($headlines->channel->item as $item): ?>
 
         <li>
-          <a class="headline-title" href="<?= $item->link ?>"><?= $item->title ?></a>
-          <span class="headline-date"><?= $item->pubDate ?></span>
+          <a class="headline-title" href="<?= htmlspecialchars($item->link) ?>">
+            <?= htmlspecialchars($item->title) ?>
+          </a>
+          <span class="headline-date"><?= htmlspecialchars($item->pubDate) ?></span>
         </li>
 
     <?php endforeach ?>
