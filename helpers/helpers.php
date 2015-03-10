@@ -10,7 +10,7 @@
      * http://github.com/nelsonreitz/project1
      *
      * Helpers functions.
-     **/
+     */
 
     // default time range for history
     define('DEFAULT_RANGE', 5);
@@ -28,7 +28,7 @@
         '10y' => 3650
     ];
 
-    /*
+    /**
      * Apologizes to user with message.
      */
     function apologize($message)
@@ -40,7 +40,7 @@
         exit;
     }
 
-    /*
+    /**
      * Returns the last headlines of stock.
      */
     function headlines($symbol)
@@ -70,7 +70,7 @@
         return $xml;
     }
 
-    /*
+    /**
      * Returns a daily history of stock prices.
      */
     function history($symbol, $range = DEFAULT_RANGE)
@@ -161,7 +161,7 @@
         return $history;
     }
 
-    /*
+    /**
      * Returns a stock by symbol.
      */
     function lookup($symbol)
@@ -211,7 +211,7 @@
         ];
     }
 
-    /*
+    /**
      * Renders a template padding in values.
      */
     function render($template, $values = [])

@@ -7,7 +7,7 @@
  * Nelson Reitz
  * http://github.com/nelsonreitz/project1
  *
- **/
+ */
 
 // default time range for history
 var DEFAULT_RANGE = 5;
@@ -49,7 +49,7 @@ $(document).ready(function() {
     }
 });
 
-/*
+/**
  * Updates stock price with ajax.
  */
 function updatePrice() {
@@ -65,7 +65,7 @@ function updatePrice() {
     });
 }
 
-/*
+/**
  * Draws a google line chart.
  */
 function drawChart(history) {
@@ -93,7 +93,7 @@ function drawChart(history) {
     chart.draw(data, options);
 }
 
-/*
+/**
  * Queries history chart with ajax.
  */
 function queryChart(range) {
