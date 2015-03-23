@@ -6,7 +6,6 @@
  *
  * Nelson Reitz
  * http://github.com/nelsonreitz/project1
- *
  */
 
 // default time range for history
@@ -55,13 +54,13 @@ $(document).ready(function() {
 function updatePrice() {
 
     $.ajax({
-        url: "index.php",
-        data: {
-            ajax_symbol: $("#symbol").html()
-        },
-        success: function(data) {
-            $("#price").html(data.price);
-        }
+      url: "index.php",
+      data: {
+        ajax_symbol: $("#symbol").html()
+      },
+      success: function(data) {
+          $("#price").html(data.price);
+      }
     });
 }
 
