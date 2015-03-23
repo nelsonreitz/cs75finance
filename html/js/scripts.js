@@ -72,13 +72,13 @@ function drawChart(history) {
     var data = new google.visualization.arrayToDataTable(history);
 
     var options = {
-        legend: "none",
-        height: 400,
-        colors: ['#444'],
-        chartArea: {top: 5, width: "90%", height: "90%"},
-        tooltip: {textStyle: {fontName: "Helvetica Neue", fontSize: 14, bold: false}},
-        vAxis: {textStyle: {fontName: "Helvetica Neue", fontSize: 14}},
-        hAxis: {textStyle: {fontName: "Helvetica Neue", fontSize: 14}},
+      legend: "none",
+      height: 400,
+      colors: ['#444'],
+      chartArea: {top: 5, width: "90%", height: "90%"},
+      tooltip: {textStyle: {fontName: "Helvetica Neue", fontSize: 14, bold: false}},
+      vAxis: {textStyle: {fontName: "Helvetica Neue", fontSize: 14}},
+      hAxis: {textStyle: {fontName: "Helvetica Neue", fontSize: 14}},
     };
 
     var chart = new google.visualization.LineChart(document.getElementById("chart"));
@@ -101,20 +101,20 @@ function queryChart(range) {
     range = typeof range !== "undefined" ? range : DEFAULT_RANGE;
 
     $.ajax({
-        url: "history.php",
-        data: {
-            history_symbol: $("#symbol").html(),
-            range: range
-        },
-        success: function(data) {
+      url: "history.php",
+      data: {
+        history_symbol: $("#symbol").html(),
+        range: range
+      },
+      success: function(data) {
 
-            // prepare data for Google form
-            var history = [["Date", "Price"]]
-            $.each(data, function(date, price) {
-                history.push([new Date(date), parseFloat(price)]);
-            });
+          // prepare data for Google form
+          var history = [["Date", "Price"]]
+          $.each(data, function(date, price) {
+              history.push([new Date(date), parseFloat(price)]);
+          });
 
-            google.setOnLoadCallback(drawChart(history));
-        }
+          google.setOnLoadCallback(drawChart(history));
+      }
     });
 }
