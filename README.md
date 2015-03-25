@@ -7,9 +7,6 @@ exercise is to give an introduction to JavaScript, Ajax and third-party APIs.
 
 As per the project [specification](http://cdn.cs75.net/2012/summer/projects/1/project1-alt.pdf), the goal was to build a simple interface that would allow users to look up informations about a given stock.
 
-#### To do
-- Mobile media queries
-
 #### Credits
 The PHP structure of this project is based on [CS50x](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x) pset7: [CS50 Finance](http://d2o9nyf4hwsci4.cloudfront.net/2014/spring/psets/7/pset7/pset7.html).
 This project was created using the [jQuery](http://http://jquery.com) library, the [Google Visualization API](https://developers.google.com/chart) and the CSS boilerplate [Skeleton](http://getskeleton.com) by [Dave Gamache](https://twitter.com/dhg).

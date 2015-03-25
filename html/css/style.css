@@ -16,6 +16,7 @@
  * - Headlines
  * - Apology
  * - Footer
+ * - Small screen
  */
 
 /* General */
@@ -87,10 +88,6 @@ input:active {
     margin-bottom: 1em;
 }
 
-#lookup-form input[type=text] {
-    margin-right: -0.61%;
-}
-
 #lookup-form input[type=text]:focus {
     border: 1px solid #888;
 }
@@ -124,11 +121,9 @@ input:active {
 
 #timerange {
     margin-bottom: 0;
-    margin-right: 3px; /* compensates for input negative margin-right */
 }
 
 #timerange input {
-    margin-right: -0.61%;
     padding: 0 20px;
     width: 6.5em;
 }
@@ -187,4 +182,17 @@ input:active {
 .footer a {
     color: #888;
     font-weight: 600;
+}
+
+/* Small screen */
+
+@media screen and (max-width: 680px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .headlines {
+        padding: 3em 5% 0 5%;
+    }
 }
