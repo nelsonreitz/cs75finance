@@ -3,7 +3,7 @@
     <?= $stock['name'] ?> (<span id="symbol"><?= $stock['symbol'] ?></span>):
     $<span id="price"><?= $stock['price'] ?></span>
   </h2>
-</div><!-- quote -->
+</div><!-- .quote -->
 
 <div class="history">
   <form id="timerange">
