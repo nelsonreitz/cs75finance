@@ -153,8 +153,13 @@ input:active {
     font-weight: 600;
 }
 
+.headline-title {
+    margin-right: 8px;
+}
+
 .headline-date {
     color: #888;
+    white-space: nowrap;
 }
 
 /* Apology */
