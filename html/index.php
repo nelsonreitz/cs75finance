@@ -31,7 +31,7 @@
         $headlines = headlines($_GET['symbol']);
 
         // validate symbol provided
-        if ($stock == false)
+        if ($stock === false)
         {
             apologize('Symbol not found.');
         }

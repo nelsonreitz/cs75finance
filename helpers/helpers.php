@@ -189,7 +189,7 @@
 
         // download first line of csv
         $data = fgetcsv($handle);
-        if ($data === false | count($data) === 1)
+        if ($data === false | count($data) !== 3)
         {
             return false;
         }
@@ -198,7 +198,7 @@
         fclose($handle);
 
         // ensure symbol was found
-        if ($data[2] === '0.00')
+        if ($data[2] === 'N/A')
         {
             return false;
         }
