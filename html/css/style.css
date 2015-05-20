@@ -49,6 +49,7 @@ a {
 
 a:hover {
     color: #444;
+    text-decoration: underline;
 }
 
 input {
@@ -80,6 +81,10 @@ input:active {
 .site-title a {
     color: #000;
     font-weight: 400;
+}
+
+.site-title a {
+    text-decoration: none;
 }
 
 /* Lookup form */
