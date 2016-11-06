@@ -1,6 +1,6 @@
-## [Project1: CS75 Finance](http://project1.nelsonreitz.com)
+## [Project1: CS75 Finance](http://project1.nelsonreitz.ch)
 
-Live demonstration: [http://project1.nelsonreitz.com](http://project1.nelsonreitz.com)
+Live demonstration: [http://project1.nelsonreitz.ch](http://project1.nelsonreitz.ch)
 
 This project is a fictive website built as an exercice for the [Computer Science E-75](http://cs75.tv) online course. The purpose of this
 exercise is to give an introduction to JavaScript, Ajax and third-party APIs.
